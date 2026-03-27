@@ -4,8 +4,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      # Change left side if port 3001 is already in use on your host.
-      - "3001:3000"
+      - "3000:3000"
     environment:
       NODE_ENV: development
       CHOKIDAR_USEPOLLING: "true"
