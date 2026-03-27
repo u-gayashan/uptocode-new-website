@@ -1,11 +1,12 @@
 export default function AuthMarketingPanel() {
   return (
-    <section className="relative hidden w-[300px] shrink-0 flex-col overflow-hidden text-[#d7dde4] lg:flex xl:w-[365px]">
+    <section className="relative hidden w-[300px] shrink-0 flex-col text-[#d7dde4] lg:flex xl:w-[365px]">
       {/* Soft white light coming from the left side (matches screenshot glow) */}
-      <div
-        aria-hidden="true"
-        className="absolute -left-[240px] top-[-70px] z-0 h-[520px] w-[560px] opacity-60 [mix-blend-mode:screen] blur-[26px] bg-[linear-gradient(90deg,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0.18)_18%,rgba(255,255,255,0)_55%)]"
-      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div
+          className="absolute -left-[240px] top-[-70px] z-0 h-[520px] w-[560px] opacity-60 [mix-blend-mode:screen] blur-[26px] bg-[linear-gradient(90deg,rgba(255,255,255,0.42)_0%,rgba(255,255,255,0.18)_18%,rgba(255,255,255,0)_55%)]"
+        />
+      </div>
 
       <div className="relative z-10">
         <img src="/logo.png" alt="UPTOCO" className="mb-7 h-7 w-auto" />
@@ -61,7 +62,7 @@ export default function AuthMarketingPanel() {
                 </svg>
               )}
             </div>
-            <h2 className="text-[16px] leading-[1.45] text-[#edf2f8]">
+            <h2 className="text-[16px] leading-[1.45] text-[#edf2f8] whitespace-nowrap">
               {item.title}
             </h2>
             <p className="mt-1 text-[14px] leading-[1.45] text-[#98a1ac]">
