@@ -1,0 +1,25 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      # Change left side if port 3001 is already in use on your host.
+      - "3001:3000"
+    environment:
+      NODE_ENV: development
+      CHOKIDAR_USEPOLLING: "true"
+      CHOKIDAR_INTERVAL: "1000"
+      WATCHPACK_POLLING: "true"
+      NEXT_PUBLIC_CLERK_SIGN_IN_URL: "/login"
+      NEXT_PUBLIC_CLERK_SIGN_UP_URL: "/signup"
+    env_file:
+      - ./.env.local
+    volumes:
+      # Mount source code so Next.js can detect live changes.
+      - ./:/app:cached
+      # Keep container's node_modules; avoids overwriting them with the host.
+      - node_modules:/app/node_modules
+volumes:
+  node_modules:
+
