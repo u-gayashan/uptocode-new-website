@@ -6,7 +6,13 @@ import { usePathname } from "next/navigation";
 export function ClerkHeader() {
   const pathname = usePathname();
 
-  if (pathname === "/signup" || pathname === "/login" || pathname === "/forgot-password") {
+  if (
+    pathname === "/signup" ||
+    pathname === "/login" ||
+    pathname === "/forgot-password" ||
+    pathname.startsWith("/dashboard") ||
+    pathname.startsWith("/chat")
+  ) {
     return null;
   }
 
